@@ -18,12 +18,17 @@ export const HomePage = () => {
   const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(loadCountries())
+        if(!qty) {
+            dispatch(loadCountries())
+        }
     }, [qty])
 
   return (
     <>
       <Controls />
+
+        {error && <h2>Can't loading data</h2>}
+        {status === 'loading' && <h2>Loading data...</h2>}
 
       <List>
             {countries.map((c) => {
