@@ -10,7 +10,7 @@ export const controlsReducer = (state = initialState, {type, payload}) => {
 		case (SET_SEARCH): {
 			return {
 				...state,
-				search: state.search
+				search: payload
 			}
 		}
 		default: return state;
