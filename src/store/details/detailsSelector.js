@@ -1,0 +1,1 @@
+export const selectCurrentCountry = (state) => state.details.currentCountry;
